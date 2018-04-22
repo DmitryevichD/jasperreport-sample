@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="general-report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="134e1271-876b-46ef-903b-abe85d4bf575">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="subReport" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="customClass" class="by.dm13y.sketch.jasper.subreport.CustomClass"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="person" class="java.lang.String"/>
+	<field name="contactInfo" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="751103f8-fed1-40c7-9dbc-7267d65e2ef2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9d2e09d-8748-4536-9051-20e8523d2407"/>
+				</reportElement>
+				<text><![CDATA[person]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="13" width="500" height="30" backcolor="#F79D9C" uuid="e8474ff2-0f76-4224-b1c7-28970fa46605">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9d2e09d-8748-4536-9051-20e8523d2407"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{person} + $P{customClass}.printString()]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" stretchType="ContainerBottom" mode="Opaque" x="0" y="40" width="175" height="50" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="d794d972-1b1f-42c8-86f8-9215bd777885"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{contactInfo})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

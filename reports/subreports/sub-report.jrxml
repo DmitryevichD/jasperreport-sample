@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subReportBean" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="40bb496a-78f1-4886-a498-8acd6bc75936">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="phone" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="0a663019-a7f3-4182-8c64-23b0d6e0f2d1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="713ba1f8-606a-40b6-9046-3cdb830ec886"/>
+				</reportElement>
+				<text><![CDATA[phone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="30" uuid="98d9629f-e9b6-4aa8-bbbb-847e395541ec">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c26f2e19-907b-46c8-97e0-59d613e4f7e3"/>
+				</reportElement>
+				<text><![CDATA[email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="b671336e-2031-43b2-82de-a0d10d7e8694">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="713ba1f8-606a-40b6-9046-3cdb830ec886"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Phone:" + $F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="100" y="0" width="100" height="30" backcolor="#9C4948" uuid="3de92c02-b2d1-4547-ab6c-067db5150865">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c26f2e19-907b-46c8-97e0-59d613e4f7e3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA["Address:" + $F{email}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
